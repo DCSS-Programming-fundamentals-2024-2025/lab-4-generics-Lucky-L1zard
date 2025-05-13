@@ -1,5 +1,8 @@
 public class Student:Person
 {
+    public Student ()
+    {      
+    }
     public Student(string name,int id)
     {
         Name = name;

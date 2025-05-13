@@ -1,5 +1,7 @@
 public class Teacher:Person
 {
+    public Teacher(){
+ }
     public Teacher(string name,int id)
     {
         Name = name;

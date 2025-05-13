@@ -1,11 +1,11 @@
-    public interface IRepository<TEntity, TKey>//з цього файлу чомусь не було видно файл з інтерфейсом тому ...
+    public interface IRepository<TEntity, TKey>where TEntity : class, new() where TKey : struct//з цього файлу чомусь не було видно файл з інтерфейсом тому ...
     {
         void Add(TKey id, TEntity entity);
         TEntity Get(TKey id);
         IEnumerable<TEntity> GetAll();
         void Remove(TKey id);
     }
-public class InMemoryRepository<TEntity,TKey>: IRepository<TEntity,TKey>
+public class InMemoryRepository<TEntity,TKey>: IRepository<TEntity,TKey> where TEntity : class, new() where TKey : struct
 {
     private Dictionary<TKey,TEntity> _peopleList = new Dictionary<TKey,TEntity>();
     public void Add(TKey id, TEntity entity)
